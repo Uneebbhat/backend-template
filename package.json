@@ -39,7 +39,7 @@
   "description": "A robust Node.js backend template built with TypeScript and Express. Features include authentication, file uploads, email sending, caching, and MongoDB integration. Perfect for building scalable REST APIs.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/uneebBhatti/backend-template.git"
+    "url": "https://github.com/Uneebbhat/backend.git"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
