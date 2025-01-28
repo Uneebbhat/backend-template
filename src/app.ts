@@ -1,15 +1,14 @@
-import express, { Application } from "express";
+import express, { Application, Request, Response } from "express";
 import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import cookieParser from "cookie-parser";
 import dbConnect from "./config/dbConnect";
-import ResponseHandler from "./utils/ResponseHandler";
-import generateToken from "./helpers/generateToken";
+import ErrorHandler from "./utils/ErrorHandler";
 
 const app: Application = express();
 
-// dbConnect();
+dbConnect();
 
 // Helmet middleware for adding security headers to all responses
 app.use(helmet());
@@ -28,20 +27,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["*"], // Replace '*' with your frontend URL
+    origin: ["*"], // TODO: Replace '*' with your frontend URL
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   })
 );
 
 // Routes
-app.get("/", (req, res) => {
-  const user = {
-    name: "John Doe",
-    email: "john.doe@example.com",
-  };
-  const token = generateToken(user, res);
-  ResponseHandler.send(res, 200, "Hello World", user, token);
+
+// TODO: Change apiRoutes with actual routes
+// app.use("/api", apiRoutes);
+
+app.use("*", (req: Request, res: Response) => {
+  ErrorHandler.send(res, 404, "Page not found");
 });
 
 export default app;
