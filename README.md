@@ -26,7 +26,7 @@ A robust Node.js backend template built with TypeScript and Express. This templa
    ```
 3. Install dependencies:
    ```bash
-   yarn install
+   npm install or npm i
    ```
 
 ## Usage
@@ -36,7 +36,7 @@ A robust Node.js backend template built with TypeScript and Express. This templa
 Run the application in development mode with hot-reloading:
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 ### Build
@@ -44,7 +44,7 @@ yarn dev
 Compile TypeScript to JavaScript:
 
 ```bash
-yarn build
+npm run build
 ```
 
 ### Production Mode
@@ -52,7 +52,7 @@ yarn build
 Run the application in production mode:
 
 ```bash
-yarn start
+npm run start
 ```
 
 ## 📁 Project Structure
