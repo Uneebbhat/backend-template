@@ -4,7 +4,7 @@ import { NODE_PASS, NODE_SERVICE, NODE_USER } from "../config/constants";
 const sendEmail = async (
   email: string,
   subject: string,
-  text: string,
+  text?: string,
   htmlContent: string = ""
 ) => {
   const transporter = nodemailer.createTransport({
