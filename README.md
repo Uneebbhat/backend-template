@@ -12,7 +12,6 @@ A robust Node.js backend template built with TypeScript and Express. This templa
 - **Security**: Enhanced with `helmet` and `cors`.
 - **Rate Limiting**: Protect APIs with `express-rate-limit`.
 - **Input Validation**: Validate requests using `joi`.
-- **Logging**: Use tools like `winston` and `morgan` for better monitoring and debugging.
 
 ## Installation
 
@@ -26,7 +25,7 @@ A robust Node.js backend template built with TypeScript and Express. This templa
    ```
 3. Install dependencies:
    ```bash
-   npm install or npm i
+   npm install
    ```
 
 ## Usage
@@ -110,36 +109,66 @@ STRIPE_PUBLISHABLE_KEY=
 STRIPE_WEBHOOK_SECRET=
 ```
 
-## Dependencies
+## Dependencies & Usage
 
-### Production
+### Production Dependencies
 
-- **bcrypt**: Password hashing.
-- **body-parser**: Parsing incoming request bodies.
-- **cloudinary**: File uploads.
-- **cookie-parser**: Parse cookies in requests.
-- **cors**: Enable Cross-Origin Resource Sharing.
-- **dotenv**: Load environment variables.
-- **express**: Web framework.
-- **express-rate-limit**: API rate limiting.
-- **helmet**: Security middleware.
-- **joi**: Data validation.
-- **jsonwebtoken**: Token-based authentication.
-- **mongoose**: MongoDB object modeling.
-- **multer**: File uploading.
-- **node-cache**: In-memory caching.
-- **nodemailer**: Email sending.
+| Package            | Usage                                          |
+| ------------------ | ---------------------------------------------- |
+| bcrypt             | Password hashing for authentication            |
+| body-parser        | Parsing incoming request bodies                |
+| cloudinary         | File storage and image processing              |
+| cookie-parser      | Parse cookies in incoming requests             |
+| cors               | Enable Cross-Origin Resource Sharing           |
+| dotenv             | Load environment variables from `.env`         |
+| express            | Web framework for building APIs                |
+| express-rate-limit | Prevent API abuse with rate limiting           |
+| helmet             | Secure Express apps with HTTP headers          |
+| joi                | Schema validation for request data             |
+| jsonwebtoken       | Token-based authentication system              |
+| mongoose           | MongoDB object modeling library                |
+| multer             | Middleware for handling file uploads           |
+| node-cache         | In-memory caching for performance optimization |
+| nodemailer         | Send emails programmatically                   |
+| stripe             | Payment processing with Stripe API             |
 
-### Development
+### Development Dependencies
 
-- **@types/...**: Type definitions for TypeScript.
-- **nodemon**: Hot-reloading during development.
-- **ts-node**: Execute TypeScript files directly.
-- **typescript**: TypeScript compiler.
+| Package    | Usage                                              |
+| ---------- | -------------------------------------------------- |
+| @types/... | TypeScript definitions for better type safety      |
+| nodemon    | Auto-restart server on file changes in development |
+| ts-node    | Run TypeScript files without compiling             |
+| typescript | TypeScript compiler for static type checking       |
 
-## Contributing
+## Contribution Guidelines
 
-Contributions are welcome! Feel free to open issues or submit pull requests.
+This project is open source, and contributions are welcome! Follow these steps to contribute:
+
+1. **Fork the repository** on GitHub.
+2. **Clone the repository** to your local machine:
+   ```bash
+   git clone https://github.com/your-username/backend.git
+   ```
+3. **Create a new branch** based on the type of change:
+   - **Feature**: `feature/branch-name`
+   - **Bug Fix**: `fix/branch-name`
+   - **Refactoring**: `refactor/branch-name`
+   - **Documentation Updates**: `docs/branch-name`
+   - **Chores (e.g., dependency updates)**: `chore/branch-name`
+   ```bash
+   git checkout -b feature/new-feature
+   ```
+4. **Make your changes and commit**:
+   ```bash
+   git add .
+   git commit -m "Add new feature"
+   ```
+5. **Push your changes**:
+   ```bash
+   git push origin feature/new-feature
+   ```
+6. **Open a Pull Request**: Go to GitHub and create a pull request from your branch to the `main` branch.
 
 ## License
 

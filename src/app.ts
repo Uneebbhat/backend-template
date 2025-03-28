@@ -35,8 +35,6 @@ app.use(
 );
 
 // Routes
-
-// TODO: Change apiRoutes with actual routes
 app.use("/api", userRoutes);
 
 app.use("*", (req: Request, res: Response) => {
