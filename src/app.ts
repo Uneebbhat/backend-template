@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import dbConnect from "./config/dbConnect";
 import ErrorHandler from "./utils/ErrorHandler";
 import userRoutes from "./routes/userRoutes.routes";
+import contactRoutes from "./routes/contactRoutes.routes";
 
 const app: Application = express();
 
@@ -26,16 +27,10 @@ app.use(limiter);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: ["*"], // TODO: Replace '*' with your frontend URL
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-  })
-);
+app.use(cors());
 
 // Routes
-app.use("/api", userRoutes);
+app.use("/api", userRoutes, contactRoutes);
 
 app.use("*", (req: Request, res: Response) => {
   ErrorHandler.send(res, 404, "Page not found");
