@@ -143,35 +143,6 @@ STRIPE_WEBHOOK_SECRET=
 | ts-node    | Run TypeScript files without compiling             |
 | typescript | TypeScript compiler for static type checking       |
 
-## Contribution Guidelines
-
-This project is open source, and contributions are welcome! Follow these steps to contribute:
-
-1. **Fork the repository** on GitHub.
-2. **Clone the repository** to your local machine:
-   ```bash
-   git clone https://github.com/your-username/backend.git
-   ```
-3. **Create a new branch** based on the type of change:
-   - **Feature**: `feature/branch-name`
-   - **Bug Fix**: `fix/branch-name`
-   - **Refactoring**: `refactor/branch-name`
-   - **Documentation Updates**: `docs/branch-name`
-   - **Chores (e.g., dependency updates)**: `chore/branch-name`
-   ```bash
-   git checkout -b feature/new-feature
-   ```
-4. **Make your changes and commit**:
-   ```bash
-   git add .
-   git commit -m "Add new feature"
-   ```
-5. **Push your changes**:
-   ```bash
-   git push origin feature/new-feature
-   ```
-6. **Open a Pull Request**: Go to GitHub and create a pull request from your branch to the `main` branch.
-
 ## License
 
 This project is licensed under the [ISC License](LICENSE).
