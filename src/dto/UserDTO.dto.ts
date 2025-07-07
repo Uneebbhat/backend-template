@@ -1,9 +1,5 @@
 import { Types } from "mongoose";
-<<<<<<< HEAD
-import { IUserDTO } from "../interface/index";
-=======
-import { IUserDTO, Role } from "../shared";
->>>>>>> 87c563bbd37ae300305e292e9901060590c09872
+import { IUserDTO, Role } from "../interface/index";
 
 class UserDTO {
   _id: Types.ObjectId;

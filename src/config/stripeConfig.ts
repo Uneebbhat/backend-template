@@ -6,7 +6,7 @@ import {
 } from "./constants";
 
 const stripe = new Stripe(STRIPE_SECRET_KEY as string, {
-  apiVersion: "2025-01-27.acacia", // Specify the API version
+  apiVersion: "2025-06-30.basil", // Specify the correct API version
   typescript: true,
 });
 

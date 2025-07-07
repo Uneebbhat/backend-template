@@ -56,15 +56,10 @@ const morganFormat = (
 // Register in app.ts
 app.use(morgan(morganFormat, { stream: morganStream }));
 
-// Rate limiting middleware to protect the API from brute-force attacks
-const isDevelopment = process.env.NODE_ENV === "development";
-
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: isDevelopment ? 1000 : 100,
-  message: isDevelopment
-    ? "Too many requests from this IP in development, please try again later."
-    : "Too many requests from this IP, please try again later.",
+  max: 100,
+  message: "Too many requests from this IP, please try again later.",
 });
 app.use(limiter);
 
@@ -77,8 +72,12 @@ app.use(cookieParser());
 // Routes
 app.use("/api", userRoutes);
 
-app.use("*", (req: Request, res: Response) => {
-  ErrorHandler.send(res, 404, "Page not found");
+app.get("/", (req, res) => {
+  res.send("Hello");
+});
+
+app.all("/*splat", (req: Request, res: Response) => {
+  ErrorHandler.send(res, 404, `The URL ${req.originalUrl} doesn't exist`);
 });
 
 export default app;
