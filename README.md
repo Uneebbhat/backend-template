@@ -64,12 +64,12 @@ backend/
 │   │-- controllers/
 │   │-- dto/
 │   │-- helpers/
+│   │-- interface/
 │   │-- middlewares/
 │   │-- models/
 │   │-- routes/
 │   │-- schemas/
 │   │-- services/
-│   │-- shared/
 │   │-- utils/
 │   │-- app.ts
 │   │-- index.ts
@@ -131,6 +131,8 @@ STRIPE_WEBHOOK_SECRET=
 | node-cache         | In-memory caching for performance optimization |
 | nodemailer         | Send emails programmatically                   |
 | stripe             | Payment processing with Stripe API             |
+| morgan             | HTTP request logging middleware                |
+| winston            | Advanced logging for application events        |
 
 ### Development Dependencies
 
