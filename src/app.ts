@@ -75,12 +75,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // Routes
-// TODO: Change apiRoutes with actual routes
 app.use("/api", userRoutes);
-
-app.get("/", (req, res) => {
-  res.send("Hello");
-});
 
 app.use("*", (req: Request, res: Response) => {
   ErrorHandler.send(res, 404, "Page not found");

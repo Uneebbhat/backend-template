@@ -1,5 +1,9 @@
 import mongoose, { Schema, Model } from "mongoose";
+<<<<<<< HEAD
 import { IUser } from "../interface/index";
+=======
+import { IUser, Role } from "../shared";
+>>>>>>> 87c563bbd37ae300305e292e9901060590c09872
 
 const UserModel: Schema<IUser> = new Schema(
   {
@@ -21,6 +25,10 @@ const UserModel: Schema<IUser> = new Schema(
       required: [true, "Password is required"],
       minlength: [8, "Password must be at least 8 characters long"],
       maxlength: [100, "Password cannot exceed 100 characters"],
+    },
+    role: {
+      type: String,
+      default: Role.user,
     },
   },
   { timestamps: true }

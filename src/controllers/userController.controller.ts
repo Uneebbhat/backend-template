@@ -18,7 +18,7 @@ export const signup = async (req: Request, res: Response) => {
   }
 
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, role } = req.body;
 
     const existingUser = await User.findOne({ email });
     if (existingUser) {
@@ -29,33 +29,28 @@ export const signup = async (req: Request, res: Response) => {
       const newUser = await User.create({
         name,
         email,
+        role,
         password: hashedPassword,
       });
 
-      const token = generateToken(res, newUser);
+      // const token = generateToken(res, newUser);
 
-      setCookies(res, token);
+      // setCookies(res, token);
 
-      const userDTO = new UserDTO(newUser);
+      // const userDTO = new UserDTO(newUser);
 
-      try {
-        const emailTemplate = welcomeEmail(newUser.name);
-        await sendEmail(
-          newUser.email,
-          emailTemplate.subject,
-          emailTemplate.text
-        );
-      } catch (error: any) {
-        console.error(`Failed to send welcome email: ${error.message}`);
-      }
+      // try {
+      //   const emailTemplate = welcomeEmail(newUser.name);
+      //   await sendEmail(
+      //     newUser.email,
+      //     emailTemplate.subject,
+      //     emailTemplate.text
+      //   );
+      // } catch (error: any) {
+      //   console.error(`Failed to send welcome email: ${error.message}`);
+      // }
 
-      ResponseHandler.send(
-        res,
-        201,
-        "Account created successfully",
-        userDTO,
-        token
-      );
+      ResponseHandler.send(res, 201, "Account created successfully", newUser);
     }
   } catch (error: any) {
     ErrorHandler.send(res, 500, `Internal Server Error: ${error.message}`);
@@ -80,13 +75,13 @@ export const login = async (req: Request, res: Response) => {
     if (!isPasswordCorrect) {
       ErrorHandler.send(res, 400, "Invalid email or password");
     } else {
-      const token = generateToken(res, user);
+      // const token = generateToken(res, user);
 
-      setCookies(res, token);
+      // setCookies(res, token);
 
-      const userDTO = new UserDTO(user!);
+      // const userDTO = new UserDTO(user!);
 
-      ResponseHandler.send(res, 200, "Login successful", userDTO, token);
+      ResponseHandler.send(res, 200, "Login successful", user!);
     }
   } catch (error: any) {
     ErrorHandler.send(res, 500, `Internal Server Error: ${error.message}`);
