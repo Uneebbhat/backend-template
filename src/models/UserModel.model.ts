@@ -1,9 +1,5 @@
 import mongoose, { Schema, Model } from "mongoose";
-<<<<<<< HEAD
-import { IUser } from "../interface/index";
-=======
-import { IUser, Role } from "../shared";
->>>>>>> 87c563bbd37ae300305e292e9901060590c09872
+import { IUser, Role } from "../interface/index";
 
 const UserModel: Schema<IUser> = new Schema(
   {
